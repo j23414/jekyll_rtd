@@ -1,3 +1,7 @@
+---
+sort: 1
+___
+
 # Distributed Machine Learning Pipeline: NDVI ~ Soil + Weather Dynamics
 By Kerrie Geil, USDA-ARS
 August 2020
