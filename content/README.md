@@ -1,7 +1,6 @@
 ---
 title: My page
 sidebar: toc
-sort: 2
 ---
 
 # Test Documentation
