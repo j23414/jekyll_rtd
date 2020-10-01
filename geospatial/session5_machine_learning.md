@@ -1,7 +1,9 @@
 ---
-title: Again
+title: Distributed Machine Learning
 sidebar: toc
-___
+maxdepth: 1
+sort: 5
+---
 
 # Distributed Machine Learning Pipeline: NDVI ~ Soil + Weather Dynamics
 By Kerrie Geil, USDA-ARS
@@ -14,7 +16,7 @@ This tutorial is also provided as a python notebook, which can be fetched by rig
 
 Fetching the python notebook via `curl` or `wget` should also be possible.
 
-```
+```bash
 curl https://raw.githubusercontent.com/kerriegeil/SCINET-GEOSPATIAL-RESEARCH-WG/master/tutorials/session5_machine_learning.ipynb
 ```
  
@@ -30,12 +32,6 @@ This tutorial walks thru a machine learning pipeline. This example excludes the 
 3. Optimize the hyperparamters in an XGBoost model (Xtreme Gradient Boosting) using a small subset of the data.
 4. Using the "best fit" hyperparameters, train the model 77.6% of the data (Group 2).
 5. Validation with the test (hold-out) data (19.4% - Group 3)
-
-## Table of Contents
-1. [Build a Distributed Cluster](#build-a-distributed-cluster)
-2. [Preprocess, Transform, and Merge the Data](#preprocess-transfor-and-merge-the-data)
-3. [Machine Learning: XGBoost Model](#machine-learning-xgboost-model)
-4. [Interpreting the Model](#interpreting-the-model)
 
 
 ```python
@@ -53,7 +49,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from tqdm.notebook import tqdm
 ```
 
-## Build a Distributed Cluster<a class="anchor" id="build-a-distributed-cluster"></a>
+## Build a Distributed Cluster
 
 We will use [dask-jobqueue](https://jobqueue.dask.org/en/latest/) to launch and scale a cluster. For a more detailed example of how this works, please see the other tutorials in the SCINet Geospatial 2020 Workshop. For a quick review, the workflow for defining a cluster and scaling is:<br>
   1. Dask-jobqueue submits jobs to Slurm with an sbatch script
@@ -91,6 +87,7 @@ print('The Dask dashboard address is: /user/'+os.environ['USER']+'/proxy/'+cl.da
 ```
 
 **View Cluster Dashboard**
+
 To view the cluster with the dask dashboard interaface click the dask icon on the left menu pane. Copy and paste the above dashboard address (in the form of /user/{User.Name}/proxy/{port#}/status) into the address bar. Then click on the "Workers", "Progress", "Task Stream", and "CPU" to open those tabs. Drag and arrange in convineint layout on right-hand side of the screen. Note these panes should be mostly blank as we have yet to scale the cluster, which is the next step below.
 
 Dask Icon:
@@ -119,9 +116,9 @@ me = os.environ['USER']
 !squeue -u $me
 ```
 
-## Preprocess, Transform, and Merge the Data<a class="anchor" id="preprocess-transfor-and-merge-the-data"></a>
+## Preprocess, Transform, and Merge the Data
 
-#### Harmonized Landsat Sentinel Data
+### Harmonized Landsat Sentinel Data
 
 Link to data repository: https://hls.gsfc.nasa.gov/
 
@@ -151,7 +148,7 @@ print('There are '+f'{len(ndvi_df):,}'+' NDVI observations.')
 ndvi_df
 ```
 
-#### Polaris Soil Hydraulic Data
+### Polaris Soil Hydraulic Data
 
 Paper Describing the Data: https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018WR022797<br>
 Data Repository Source:  http://hydrology.cee.duke.edu/POLARIS/PROPERTIES/v1.0/
@@ -169,7 +166,7 @@ soil_df = soil.interp(x=ndvi.x,y=ndvi.y,method='linear').squeeze().to_dataframe(
 soil_df
 ```
 
-#### PRISM Precipitation, Tempature, and Vapor Pressure Deficit Data
+### PRISM Precipitation, Tempature, and Vapor Pressure Deficit Data
 
 PRISM Data in a CSV file. Note this data was queried at a single point at the center of CPER.
 
@@ -190,7 +187,7 @@ df_env = pd.read_csv('/lustre/project/geospatial_tutorials/wg_2020_ws/data/PRISM
 df_env
 ```
 
-#### Transform Function to Merge NDVI, Soil, and PRISM data.
+### Transform Function to Merge NDVI, Soil, and PRISM data.
 
 Here we develop a class to merge the three dataset. Note the most import code is in the ```def transform``` function.
 
@@ -226,7 +223,8 @@ class merge_dsets(BaseEstimator,TransformerMixin):
         return(df.drop(columns=['date','x','y','ndvi']),df[['ndvi']])#.to_dask_array(lengths=True))
 ```
 
-## Machine Learning: XGBoost Model<a class="anchor" id="machine-learning-xgboost-model"></a>
+## Machine Learning: XGBoost Model
+
 The "*learn*" portion in the ETL pipeline.
 
 
@@ -379,7 +377,7 @@ rasterize(pts_res).redim.range(Count=(10, 2000)).opts(cmap='viridis',
                                                       logz=True)
 ```
 
-## Interpreting the Model<a class="anchor" id="interpreting-the-model"></a>
+## Interpreting the Model
 
 **Use the [SHAP (SHapley Additive exPlanations) package](https://github.com/slundberg/shap)** to interpret the model results and better understand the features "driving" ndvi dynamics.
 

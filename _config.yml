@@ -1,4 +1,4 @@
-title: Your awesome title
+title: Workbook
 lang: en
 description: Write an awesome description for your new site here
 
@@ -15,6 +15,10 @@ remote_theme: rundocs/jekyll-rtd-theme
 readme_index:
   with_frontmatter: true
 
+#include:
+#  - content
+#  - content/geospatial
+  
 exclude:
   - Gemfile
   - Gemfile.lock
