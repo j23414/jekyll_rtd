@@ -1,4 +1,6 @@
 ---
+title: My page
+sidebar: toc
 sort: 2
 ---
 

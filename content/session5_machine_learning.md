@@ -1,4 +1,6 @@
 ---
+title: Again
+sidebar: toc
 sort: 3
 ___
 
