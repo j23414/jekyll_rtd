@@ -12,7 +12,7 @@ sort: 3
 
 Thus far, you have covered commandline navigation, unix commands, and placing those commands into a script for reproducibility. The next step is learning about GitHub, or a system for keeping track those scripts. View the GitHub produced intro below: 
 
-<iframe width="560" height="315" src="https://youtu.be/noZnOSpcjYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/noZnOSpcjYY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **More Info:**
 
