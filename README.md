@@ -1,3 +1,9 @@
+# Workbook
+
+[See Live Site](https://j23414.github.io/jekyll_rtfm/)
+
+# Scrap after this
+
 # starter-slim
 
 1. [Generate with the same files and folders](https://github.com/rundocs/starter-slim/generate) from this repository
