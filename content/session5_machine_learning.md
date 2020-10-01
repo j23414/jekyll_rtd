@@ -1,5 +1,5 @@
 ---
-sort: 1
+sort: 3
 ___
 
 # Distributed Machine Learning Pipeline: NDVI ~ Soil + Weather Dynamics
