@@ -18,7 +18,7 @@ This tutorial is also provided as a python notebook, which can be fetched by rig
 
 Fetching the python notebook via `curl` or `wget` should also be possible.
 
-```
+```bash
 curl https://raw.githubusercontent.com/kerriegeil/SCINET-GEOSPATIAL-RESEARCH-WG/master/tutorials/session3-intro-to-python-dask-on-ceres.ipynb
 ```
 
