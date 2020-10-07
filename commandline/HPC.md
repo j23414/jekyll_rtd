@@ -2,7 +2,7 @@
 title: "HPC Setup"
 sidebar: toc
 maxdepth: 1
-sort: 5
+sort: 6
 ---
 
 
