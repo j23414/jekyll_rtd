@@ -20,6 +20,11 @@ This is a test to see if download can be automatic.
 
 * <a id="raw-url" href="https://raw.githubusercontent.com/kerriegeil/SCINET-GEOSPATIAL-RESEARCH-WG/master/tutorials/session3-intro-to-python-dask-on-ceres.ipynb" download="session3-intro-to-python-dask-on-ceres.ipynb">Download FILE test</a>
 
+Another attempt by zipping the file.
+
+* <a id="raw-url" href="https://raw.githubusercontent.com/j23414/jekyll_rtd/master/geospatial/session3-intro-to-python-dask-on-ceres.ipyn\
+b.zip" download="session3-intro-to-python-dask-on-ceres.ipynb.zip">Download FILE test</a>
+
 Fetching the python notebook via `curl` or `wget` should also be possible.
 
 ```bash
