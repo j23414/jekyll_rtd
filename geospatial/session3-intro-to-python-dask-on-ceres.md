@@ -16,14 +16,9 @@ This tutorial is also provided as a python notebook, which can be fetched by rig
 
 * [session3-intro-to-python-dask-on-ceres.ipynb](https://raw.githubusercontent.com/kerriegeil/SCINET-GEOSPATIAL-RESEARCH-WG/master/tutorials/session3-intro-to-python-dask-on-ceres.ipynb)
 
-This is a test to see if download can be automatic.
+This is a test to see if download can be automatic (Needed to zip the file and then this one works).
 
 * <a href="https://j23414.github.io/jekyll_rtd/geospatial/session3-intro-to-python-dask-on-ceres.ipynb.zip">Download FILE test</a>
-
-Another attempt by zipping the file.
-
-* <a id="raw-url" href="https://raw.githubusercontent.com/j23414/jekyll_rtd/master/geospatial/session3-intro-to-python-dask-on-ceres.ipyn\
-b.zip" download="session3-intro-to-python-dask-on-ceres.ipynb.zip">Download FILE test</a>
 
 Fetching the python notebook via `curl` or `wget` should also be possible.
 
