@@ -18,7 +18,7 @@ This tutorial is also provided as a python notebook, which can be fetched by rig
 
 This is a test to see if download can be automatic.
 
-* <a id="raw-url" href="https://raw.githubusercontent.com/kerriegeil/SCINET-GEOSPATIAL-RESEARCH-WG/master/tutorials/session3-intro-to-python-dask-on-ceres.ipynb" download="session3-intro-to-python-dask-on-ceres.ipynb">Download FILE test</a>
+* <a href="https://j23414.github.io/jekyll_rtd/geospatial/session3-intro-to-python-dask-on-ceres.ipynb.zip">Download FILE test</a>
 
 Another attempt by zipping the file.
 
